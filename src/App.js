@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 
+import GenerateConfig from './components/ConfigGen';
+
 const activities = [
 {title: "ApiPost"},
 {title: "BigPandaAlert"},
@@ -81,6 +83,8 @@ function ApiPost(){
   )
 }
 
+
+
 function App() {
   return (
     <div className="App">
@@ -117,8 +121,12 @@ function App() {
           Learn React
         </a>
       </header>
+      <GenerateConfig />
     </div>
   );
 }
+
+
+
 
 export default App;
