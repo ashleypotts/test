@@ -27,13 +27,19 @@ function ApiPost(){
 
 function App() {
   const [showConfig, setShowConfig] = useState(false);
-  const [activityList, setActivityList] = useState([{activity1:""}]);
+  const [activityList, setActivityList] = useState([{activity:""}]);
   const handleConfig = () => {
     setShowConfig(true);
   };
   const handleNew = () => {
-    setActivityList([...activityList, {[`activity${activityList.length}`]:""}]);
+    setActivityList([...activityList, {activity:""}]);
   };
+  const handleChange = (e,index) => {
+      const {name,value} = e.target;
+      const list = [...activityList];
+      list[index][name]=value;
+      setActivityList(list);
+    }
   const handleDelete = (index) => {
     const list = [...activityList];
     list.splice(index, 1);
@@ -47,7 +53,7 @@ function App() {
           {activityList.map((singleActivity, index) => (
             <div>
             <NewActivity/>
-            {activityList.length !== 1 && (<button onClick={()=>handleDelete(index)} >Delete</button>)}
+            {activityList.length !== 1 && (<button onClick={()=>handleDelete(index)}>Delete</button>)}
             {activityList.length - 1 === index && 
               <div>
                 <br/>
