@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 import GenerateConfig from './components/ConfigGen';
 import GenerateHeader from './components/header';
@@ -9,6 +10,7 @@ import Text from './components/textbox';
 import Num from './components/number';
 import Radio from './components/radio';
 import { Component } from 'react';
+
 
 function ApiPost(){
   const ifTableExists=["fail", "replace", "append"];
@@ -22,22 +24,40 @@ function ApiPost(){
   )
 }
 
-function testFunc() {
-    return(<p>hi</p>);
-}
 
 function App() {
+  const [showConfig, setShowConfig] = useState(false);
+  const [activityList, setActivityList] = useState([{activity1:""}]);
+  const handleConfig = () => {
+    setShowConfig(true);
+  };
+  const handleNew = () => {
+    setActivityList([...activityList, {[`activity${activityList.length}`]:""}]);
+  };
+  const handleDelete = (index) => {
+    const list = [...activityList];
+    list.splice(index, 1);
+    setActivityList(list);
+  };
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
         <form>
           <GenerateHeader/>
-          <button onClick={NewActivity}>New</button><br/>
-          <button onClick={GenerateConfig}>Generate Config</button><br/>
+          {activityList.map((singleActivity, index) => (
+            <div>
+            <NewActivity/>
+            {activityList.length !== 1 && (<button onClick={()=>handleDelete(index)} >Delete</button>)}
+            {activityList.length - 1 === index && 
+              <div>
+                <br/>
+                <button onClick={handleNew} disabled={showConfig}>New</button>
+              </div>}
+            <br/><br/>
+            </div>
+          ))}
+          <button onClick={setShowConfig} disabled={showConfig}>Generate Config</button><br/>
+          {showConfig && GenerateConfig()}
         </form>
       </header>
     </div>

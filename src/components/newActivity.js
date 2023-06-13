@@ -21,19 +21,20 @@ const activities = [
 ]
 
 function NewActivity() {
-    return(
-        <div>
-            <select id="activity" name="activity">
-            <option selected="true" disabled="true" value="Select an activity...">Select an activity...</option>
-            {activities.map(function(drop) {
-                return (
-                    <Drop title={drop.title}/>
-                )
-            })
-            }
-        </select><br/><br/>
-        </div>
-    )
-}
+
+        return(
+            <div>
+                <select id="activity" name="activity" >
+                <option selected="true" disabled="true" value="Select an activity...">Select an activity...</option>
+                {activities.map(function(drop) {
+                    return (
+                        <Drop title={drop.title}/>
+                    )
+                })
+                }
+            </select>
+            </div>
+        )
+    }
 
 export default NewActivity;
