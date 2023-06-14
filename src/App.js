@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import GenerateConfig from './components/ConfigGen';
 import GenerateHeader from './components/header';
-import NewActivity from './components/newActivity';
+import MakeActivities from './components/newActivity';
 import Check from './components/checkbox';
 import Text from './components/textbox';
 import Num from './components/number';
@@ -27,41 +27,15 @@ function ApiPost(){
 
 function App() {
   const [showConfig, setShowConfig] = useState(false);
-  const [activityList, setActivityList] = useState([{activity:""}]);
   const handleConfig = () => {
     setShowConfig(true);
-  };
-  const handleNew = () => {
-    setActivityList([...activityList, {activity:""}]);
-  };
-  const handleChange = (e,index) => {
-      const {name,value} = e.target;
-      const list = [...activityList];
-      list[index][name]=value;
-      setActivityList(list);
-    }
-  const handleDelete = (index) => {
-    const list = [...activityList];
-    list.splice(index, 1);
-    setActivityList(list);
   };
   return (
     <div className="App">
       <header className="App-header">
         <form>
           <GenerateHeader/>
-          {activityList.map((singleActivity, index) => (
-            <div>
-            <NewActivity/>
-            {activityList.length !== 1 && (<button onClick={()=>handleDelete(index)}>Delete</button>)}
-            {activityList.length - 1 === index && 
-              <div>
-                <br/>
-                <button onClick={handleNew} disabled={showConfig}>New</button>
-              </div>}
-            <br/><br/>
-            </div>
-          ))}
+          <MakeActivities/>
           <button onClick={setShowConfig} disabled={showConfig}>Generate Config</button><br/>
           {showConfig && GenerateConfig()}
         </form>
