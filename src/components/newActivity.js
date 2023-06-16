@@ -1,6 +1,6 @@
 import Drop from './dropdown';
 import { useState } from 'react';
-import { Component } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import './../App.css';
 
 const activities = [
@@ -24,52 +24,56 @@ const activities = [
 ]
 
 function MakeActivities(){
-    const [activityList, setActivityList] = useState([{activity: ""}]);
+
+    const [activityList, setActivityList] = useState([{id: uuidv4(), activity: ""}]);
     
-    let handleNew = () => {
-        setActivityList([...activityList, {activity: ""}]);
-      };
-    let handleChange = (e,index) => {
-        let list = [...activityList];
-        list[index][e.target.activity]=e.target.name;
-        setActivityList(list);
+    let handleChange = (e,id) => {
+        const { name, value } = e.target;
+        setActivityList(prevList => {
+            return prevList.map(activity=> {
+                if (activity.id === id) {
+                    return {...activity, [name]: value};
+                }
+                return activity;
+            })
+        })
     };
-    let handleDelete = (index) => {
-        let list = [...activityList];
-        list.splice(index, 1);
-        setActivityList(list);
+    let handleNew = () => {
+        setActivityList(prevList=>[...prevList, {id:uuidv4(), activity:""}]);
+    };
+    let handleDelete = (id) => {
+        setActivityList(prevList => prevList.filter(activity => activity.id !== id));
     };
 
-    function NewActivity(i) {
+    function NewActivity({id, activity}) {
         return(
             <div>
-                <select id="activity" name="activity" onSelect={e=>handleChange(e,i)}>
-                <option selected="true" disabled="true" value="Select an activity...">Select an activity...</option>
-                {activities.map(function(drop) {
+                <select id='{activity${i}}' name="activity" value={activity || ''} onChange={(e)=>handleChange(e,id)}>
+                <option disabled value="">Select an activity...</option>
+                {activities.map(function(drop, index) {
                     return (
-                        <Drop title={drop.title}/>
-                    )
+                        <Drop key={index} title={drop.title}/>
+                    );
                 })
                 }
             </select>
+            {activityList.length !== 1 && (<button onClick={()=>handleDelete(id)}>Delete</button>)}
             </div>
         )
     }
 
     return(
         <form>
-        {activityList.map((singleActivity, index) => (
-            <div className="App-box">
-            <NewActivity i={index}/>
-            {activityList.length !== 1 && (<button onClick={()=>handleDelete(index)}>Delete</button>)}
-            {activityList.length - 1 === index && 
-            <div>
-                <br/>
-                <button onClick={handleNew}>New</button>
-            </div>}
-            <br/><br/>
+        {activityList.map((singleActivity) => (
+            <div className="App-box" key={singleActivity.id}>
+            <NewActivity id={singleActivity.id} activity={singleActivity.activity}/>
             </div>
-      ))}
+        ))}            
+        <br/>
+        <div key={activityList.length}>
+            <button onClick={handleNew}>New</button>
+        </div>
+        <br/>
         </form>
     )
 }

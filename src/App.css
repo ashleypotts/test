@@ -14,19 +14,19 @@
 }
 
 .App-header {
-  background-color: #ffb8dd;
+  background-color: #8223D2;
   min-height: 100vh;
   display: flex;
   flex-direction: left;
   align-items: left;
   justify-content: left;
   font-size: calc(10px + 2vmin);
-  color: rgb(14, 10, 123);
+  color: rgb(255, 255, 255);
   padding-left: 10px;
 }
 
 .App-box {
-  background-color: #eba6c9;
+  background-color: #8a22df;
   flex-direction: left;
   align-items: left;
   justify-content: left;
@@ -34,6 +34,7 @@
   color: rgb(14, 10, 123);
   padding-left: 10px;
   margin-top: 10px;
+  padding-bottom: 10px;
 }
 .App-link {
   color: #5ddcff;
