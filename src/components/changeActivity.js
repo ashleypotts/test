@@ -1,7 +1,7 @@
-import Check from './components/checkbox';
-import Text from './components/textbox';
-import Num from './components/number';
-import Radio from './components/radio';
+import Check from './checkbox';
+import Text from './textbox';
+import Num from './number';
+import Radio from './radio';
 
 function ApiPost(){
     return(
