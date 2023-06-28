@@ -1,4 +1,5 @@
 import Drop from './dropdown';
+import ChangeActivity from './changeActivity';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import './../App.css';
@@ -30,12 +31,14 @@ function MakeActivities(){
     let handleChange = (e,id) => {
         const { name, value } = e.target;
         setActivityList(prevList => {
-            return prevList.map(activity=> {
-                if (activity.id === id) {
-                    return {...activity, [name]: value};
-                }
-                return activity;
-            })
+            return (
+                prevList.map(activity=> {
+                    if (activity.id === id) {
+                        return {...activity, [name]: value};
+                    }
+                    return activity;
+                })
+            )
         })
     };
     let handleNew = () => {
