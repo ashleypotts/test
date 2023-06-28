@@ -3,10 +3,19 @@ import Text from './textbox';
 function GenerateHeader() {
     return(
     <div>
-        <Text title="configName"/>
-        <Text title="client"/>
-        <Text title="process"/>
+        <div>
+            <h1>Backoffice ETL Config File Generator Utility</h1>
+        </div>
+    
+        <table>
+            <Text title="Config Name"/>
+            <Text title="Client"/>
+            <Text title="Process"/>
+        </table>
+
     </div>
+
+  
     )
 }
 
