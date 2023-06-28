@@ -4,7 +4,7 @@ function GenerateHeader() {
     return(
     <div>
         <div>
-            <h1>Backoffice ETL Config File Generator Utility</h1>
+            <h3>Backoffice ETL Config File Generator Utility</h3>
         </div>
     
         <table>
