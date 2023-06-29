@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 
+import MakeCheckboxes from './components/activityCheckboxes';
 import GenerateConfig from './components/ConfigGen';
 import GenerateHeader from './components/header';
 import MakeActivities from './components/newActivity';
@@ -18,7 +19,8 @@ function App() {
       <header className="App-header">
         <form>
           <GenerateHeader/>
-          <MakeActivities/>
+          {/* <MakeActivities/> */}
+          <MakeCheckboxes/>
           <button onClick={setShowConfig} disabled={showConfig}>Generate Config</button><br/>
           {showConfig && GenerateConfig()}
         </form>
