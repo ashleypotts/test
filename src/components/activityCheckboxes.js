@@ -2,6 +2,7 @@ import Check from './checkbox';
 import Text from './textbox';
 import Num from './number';
 import Radio from './radio';
+import { useState } from 'react';
 
 const activities = [
     {title: "ApiPost"},
@@ -63,16 +64,6 @@ function ApiPost(){
     )
 }
 
-// function callActivity(props){
-//     // return(
-//         <div>
-//         </div>
-//             if(props=="ApiPost"){
-//                 document.getElementById("ApiPostform").style.display="block"
-//             }
-//     // )
-// }
-
 function Checkbox(props){
     return(
         <tr>
@@ -88,14 +79,38 @@ function Checkbox(props){
 }
 
 function MakeCheckboxes(){
+    const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
+ 
+    const handleChange = (event, activity) => {
+        if(event.target.checked) {
+            setSelectedCheckboxes([...selectedCheckboxes, activity]);
+        }
+        else {
+            setSelectedCheckboxes(selectedCheckboxes.filter(item => item !== activity))
+        }
+    };
+
     return(
         <div>
             <table>
-        {activities.map(function(activity) {
-            return (
-                <Checkbox title={activity.title}/>
-            );
-        })
+        {activities.map(activity=> (
+            <div key={activity.title}>
+                <tr>
+                    <td>
+                    <input type="checkbox" checked={selectedCheckboxes.includes(activity)} id={activity.title} name={activity.title} onChange={event => handleChange(event, activity.title)}/>
+                    </td>
+                    <td>
+                        <label for={activity.title}>{activity.title}</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colSpan="2">
+                {selectedCheckboxes.includes(activity.title) && <Text title="test"/>}
+                    </td>
+                </tr>
+                </div>
+        )
+        )
         }
         </table>
         </div> 
