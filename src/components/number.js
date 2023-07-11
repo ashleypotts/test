@@ -1,9 +1,13 @@
 function Num(props){
     return(
-      <div>
-      <label for={props.title}>{props.title}:</label>
-          <input type="number" id={props.title} name={props.title}/><br/>
-      </div>
+      <tr>
+        <td>
+          <label for={props.title}>{props.title}:</label>
+        </td>
+        <td>
+          <input type="number" id={props.title} name={props.title}/>
+        </td>
+      </tr>
     )
   }
 
