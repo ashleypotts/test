@@ -2,10 +2,10 @@ function TextArea(props){
     return(
         <tr>
             <td>
-                <label for={props.title}>{props.title}:</label>
+                <label for={props.title + props.activity + props.extra}>{props.title}:</label>
             </td>
             <td>
-                <textarea id={props.title} name={props.title}>{props.content}</textarea>
+                <textarea id={props.title + props.activity + props.extra} name={props.title + props.activity + props.extra}>{props.content}</textarea>
             </td>
         </tr>
     )

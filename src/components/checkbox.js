@@ -2,10 +2,10 @@ function Check(props){
     return(
       <tr>
         <td>
-          <label for={props.title}>{props.title}:</label>
+          <label for={props.title + props.activity + props.extra}>{props.title}:</label>
         </td>
         <td>
-          <input type="checkbox" id={props.title} name={props.title}/><br></br>
+          <input type="checkbox" id={props.title + props.activity + props.extra} name={props.title + props.activity + props.extra}/><br></br>
         </td>
       </tr>
     )

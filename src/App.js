@@ -5,6 +5,7 @@ import { useState } from 'react';
 import MakeCheckboxes from './components/activityCheckboxes';
 import GenerateConfig from './components/ConfigGen';
 import GenerateHeader from './components/header';
+import asurionLogo from './asurion_logo_black.png'
 import MakeActivities from './components/newActivity';
 import { Component } from 'react';
 
@@ -16,6 +17,8 @@ function App() {
   };
   return (
     <div className="App">
+      <div className="App-logo">
+      <img src={asurionLogo} height={80} style={{alignSelf:'right'}}/></div>
       <header className="App-header">
         <form>
           <GenerateHeader/>
