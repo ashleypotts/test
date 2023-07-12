@@ -18,6 +18,7 @@ function GenerateHeader() {
             <TextArea title="description"/>
             <Text title="eventFilters"/>
         </table>
+        <table>
         <p>Schedule
             <table style={{marginLeft:20}}>
                 <Check title="enabled"/>
@@ -31,6 +32,7 @@ function GenerateHeader() {
                 <Text title="days"/>
             </table>
         </p>    
+        </table>
     </div>
     )
 }

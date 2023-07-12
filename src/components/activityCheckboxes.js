@@ -59,7 +59,7 @@ function MakeCheckboxes() {
 
     return (
     <div>
-      <table border={1}>
+      <table>
         <tbody>
           {activities.map(activity => (
             <React.Fragment key={activity.title}>
