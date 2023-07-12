@@ -27,7 +27,7 @@ const activities = [
 function Checkbox({ title, checked, onChange }) {
   return (
     <tr>
-      <td>
+      <td width={10}>
         <input
           type="checkbox"
           checked={checked}

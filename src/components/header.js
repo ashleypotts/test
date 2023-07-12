@@ -10,31 +10,28 @@ function GenerateHeader() {
             <h3>Backoffice ETL Config File Generator Utility</h3>
         </div>
         <table>
-            <Text title="Config Name"/>
-            <Text title="Type"/>
-            <Text title="Subtype"/>
-            <Text title="Client"/>
-            <Text title="Process"/>
-            <TextArea title="Description"/>
-            <Text title="EventFilters"/>
+            <Text title="configName"/>
+            <Text title="type"/>
+            <Text title="subtype"/>
+            <Text title="client"/>
+            <Text title="process"/>
+            <TextArea title="description"/>
+            <Text title="eventFilters"/>
         </table>
         <p>Schedule
             <table style={{marginLeft:20}}>
-                <Check title="Enabled"/>
-                <Text title="Type"/>
+                <Check title="enabled"/>
+                <Text title="type"/>
             </table>
         </p>
         <p style={{marginLeft:20}}>Window
             <table style={{marginLeft:40}}>
-                <Text title="Start time"/>
-                <Text title="End time"/>
-                <Text title="Days"/>
+                <Text title="startTime"/>
+                <Text title="endTime"/>
+                <Text title="days"/>
             </table>
-        </p>
-        
+        </p>    
     </div>
-
-  
     )
 }
 

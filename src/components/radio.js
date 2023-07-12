@@ -1,7 +1,10 @@
+var _ = require('lodash');
+
 function Radio(props){
+  var formattedTitle = _.startCase(props.title)
     return(
       <div>
-        <label for={props.title + props.activity + props.extra}>{props.title}:</label>
+        <label for={props.title + props.activity + props.extra}>{formattedTitle}:</label>
         {props.options.map(function(option) {
             return (
               <div>
