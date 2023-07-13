@@ -6,7 +6,6 @@ import MakeCheckboxes from './components/activityCheckboxes';
 import GenerateConfig from './components/ConfigGen';
 import GenerateHeader from './components/header';
 import asurionLogo from './asurion_logo_black.png'
-import MakeActivities from './components/newActivity';
 import { Component } from 'react';
 
 
