@@ -19,19 +19,22 @@ function GenerateHeader() {
             <Text title="eventFilters"/>
         </table>
         <table>
-        <p>Schedule
-            <table style={{marginLeft:20}}>
+        <tr>Schedule</tr>
+        <table style={{marginLeft:15}}>
+        <tr>
+            {/* <table style={{marginLeft:15}}> */}
                 <Check title="enabled"/>
                 <Text title="type"/>
-            </table>
-        </p>
-        <p style={{marginLeft:20}}>Window
-            <table style={{marginLeft:40}}>
+            {/* </table> */}
+        </tr>
+        <tr >Window
+            <table style={{marginLeft:25}}>
                 <Text title="startTime"/>
                 <Text title="endTime"/>
                 <Text title="days"/>
             </table>
-        </p>    
+        </tr>
+        </table>
         </table>
     </div>
     )

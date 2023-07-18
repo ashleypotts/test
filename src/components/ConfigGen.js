@@ -90,6 +90,8 @@ var configjson = {
 
 function GenerateConfig() {
     let newconfig = JSON.stringify(configjson);
+    var test = document.body.getElementsByTagName("configName")
+    console.log(test)
     return (
       <textarea style={{width:"500px",
                         height: "200px"}}>
