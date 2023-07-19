@@ -11,14 +11,14 @@ function Radio(props){
     return(
       <tr>
         <td>
-        <label for={title + activity + extra}>{formattedTitle}:</label>
+        <label htmlFor={title + activity + extra}>{formattedTitle}:</label>
         </td>
         <td>
         {props.options.map(function(option) {
             return (
               <div>
               <input type="radio" id={option + activity + extra} name={title + activity + extra} value={option + activity + extra}/>
-              <label for={option + activity + extra}>{option}</label>
+              <label htmlFor={option + activity + extra}>{option}</label>
               </div>
             )
           })

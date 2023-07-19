@@ -44,7 +44,7 @@ function Checkbox({title, checked, onChange}) {
         <input type="checkbox" checked={checked} id={title} name={title} onChange={onChange}/>
       </td>
       <td>
-         <label for={title}>{title}</label>
+         <label htmlFor={title}>{title}</label>
       </td>
     </tr>
   );

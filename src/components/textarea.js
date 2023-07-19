@@ -11,7 +11,7 @@ function TextArea(props){
     return(
         <tr>
             <td>
-                <label for={title + activity + extra}>{formattedTitle}:</label>
+                <label htmlFor={title + activity + extra}>{formattedTitle}:</label>
             </td>
             <td>
                 <textarea id={title + activity + extra} name={title + activity + extra}>{props.content}</textarea>

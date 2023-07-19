@@ -11,7 +11,7 @@ function Num(props){
     return(
       <tr>
         <td>
-          <label for={title + activity + extra}>{formattedTitle}:</label>
+          <label htmlFor={title + activity + extra}>{formattedTitle}:</label>
         </td>
         <td>
           <input type="number" id={title + activity + extra} name={title + activity + extra}/>

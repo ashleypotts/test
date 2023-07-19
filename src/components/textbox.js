@@ -9,20 +9,12 @@ function Text(props){
   else{var activity=props.activity}
   if(props.extra===undefined){var extra=""}
   else{var extra=props.extra}
-
-  // const handleInput = (event) => {
-  //   const inputValue = event.target.value;
-  //   setFormValues(prevValues => ({
-  //     ...prevValues,
-  //     [props.inputName]: inputValue
-  //   }));
-  // };
   
   var formattedTitle = _.startCase(props.title)
     return(
       <tr>
         <td>
-          <label for={title + activity + extra}>{formattedTitle}:</label>
+          <label htmlFor={title + activity + extra}>{formattedTitle}:</label>
         </td>
         <td>
           <input type="text" id={title + activity + extra} name={title + activity + extra} onChange={props.onChange}/>
