@@ -1,6 +1,6 @@
 function Log(){
     return(
-        <div></div>
+        <form></form>
     )
 }
 

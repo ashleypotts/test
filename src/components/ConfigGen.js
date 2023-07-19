@@ -1,3 +1,4 @@
+var configInfo={};
 
 var configjson = {
     "type": "",
@@ -88,10 +89,18 @@ var configjson = {
 }
 
 
-function GenerateConfig() {
+export function updateConfigInfo(newData){
+    {for (var data in newData) {
+        configInfo[data] = newData[data]
+      } }  
+}
+
+export function GenerateConfig() {
+    {for (var item in configInfo) {
+        configjson[item] = configInfo[item]
+      } }  
     let newconfig = JSON.stringify(configjson);
-    var test = document.body.getElementsByTagName("configName")
-    console.log(test)
+    console.log(configInfo)
     return (
       <textarea style={{width:"500px",
                         height: "200px"}}>
@@ -100,4 +109,4 @@ function GenerateConfig() {
     )
   }
 
-export default GenerateConfig;
+// export default GenerateConfig;

@@ -3,11 +3,12 @@ import './App.css';
 import { useState } from 'react';
 
 import MakeCheckboxes from './components/activityCheckboxes';
-import GenerateConfig from './components/ConfigGen';
+import {GenerateConfig} from './components/ConfigGen';
 import GenerateHeader from './components/header';
 import asurionLogo from './asurion_logo_black.png'
 import { Component } from 'react';
 
+var headerData={};
 
 function App() {
   const [showConfig, setShowConfig] = useState(false);
