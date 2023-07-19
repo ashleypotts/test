@@ -1,7 +1,7 @@
 import Text from './textbox';
 import TextArea from './textarea';
 import Check from './checkbox';
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import {updateConfigInfo} from './ConfigGen';
 
 function GenerateHeader() {
@@ -12,8 +12,10 @@ function GenerateHeader() {
         ...prevValues,
         [event.target.name]: inputValue
         }));
-        updateConfigInfo(formValue)
     };
+    useEffect(() => {
+        updateConfigInfo(formValue);
+      }, [formValue]);
     return(
     <div>
         <div>

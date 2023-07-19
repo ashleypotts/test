@@ -100,7 +100,6 @@ export function GenerateConfig() {
         configjson[item] = configInfo[item]
       } }  
     let newconfig = JSON.stringify(configjson);
-    console.log(configInfo)
     return (
       <textarea style={{width:"500px",
                         height: "200px"}}>
