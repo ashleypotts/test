@@ -1,3 +1,4 @@
+// Will contain information from any updated input
 var configInfo={};
 
 var configjson = {
@@ -88,13 +89,14 @@ var configjson = {
     }
 }
 
-
+// Called by inputs to update configInfo
 export function updateConfigInfo(newData){
     {for (var data in newData) {
         configInfo[data] = newData[data]
       } }
 }
 
+// Creates a textarea containing contents of configInfo
 export function GenerateConfig() {
     {for (var item in configInfo) {
         configjson[item] = configInfo[item]
@@ -107,5 +109,3 @@ export function GenerateConfig() {
       </textarea> 
     )
   }
-
-// export default GenerateConfig;

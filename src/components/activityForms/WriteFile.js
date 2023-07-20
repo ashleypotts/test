@@ -1,3 +1,5 @@
+// Returns a form with all necessary inputs for an WriteFile activity
+
 import Text from '../textbox';
 import Check from '../checkbox';
 import Num from '../number';
@@ -9,7 +11,7 @@ function WriteFile(){
     return(
         <tr>
             <td colSpan={2}>
-                <form id="WriteFileForm">
+                <form id="WriteFileForm" style={{marginLeft:20}}>
                     <Check title="failOnEmptyFile" activity = "WriteFile"/>
                     <Check title="failOnBlobExists" activity = "WriteFile"/>
                     <Text title="blobNameQuery" activity = "WriteFile"/>

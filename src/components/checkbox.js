@@ -1,9 +1,12 @@
+// Function called to create a checkbox
+
 import {useState, useEffect} from 'react';
 import {updateConfigInfo} from './ConfigGen';
 var _ = require('lodash');
 
 function Check(props){
 
+  // Handles state of checkbox
   const [formValue, setFormValue] = useState({});
   const handleInput = (event) => {
     let inputValue=false;
@@ -13,10 +16,12 @@ function Check(props){
     setFormValue({[event.target.name]: inputValue});
   };
 
+  // Calls updateConfigInfo in ConfigGen file to send new input
   useEffect(() => {
     updateConfigInfo(formValue);
   }, [formValue]);
 
+  // Formats and saves parameters
   var formattedTitle = _.startCase(props.title)
   if(props.title===undefined){var title=""}
   else{var title=props.title}
@@ -24,6 +29,8 @@ function Check(props){
   else{var activity=props.activity}
   if(props.extra===undefined){var extra=""}
   else{var extra=props.extra}
+
+  // Returns checkbox created with a label
   return(
     <tr>
       <td>

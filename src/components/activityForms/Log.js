@@ -1,6 +1,8 @@
+// Returns a form with all necessary inputs for an Log activity
+
 function Log(){
     return(
-        <form></form>
+        <form style={{marginLeft:20}}></form>
     )
 }
 

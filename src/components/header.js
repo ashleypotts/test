@@ -1,9 +1,10 @@
+// Creates a form with inputs for the information general to the config file, not an individual activity
+
 import Text from './textbox';
 import TextArea from './textarea';
 import Check from './checkbox';
 
 function GenerateHeader() {
-
     return(
     <div>
         <div>

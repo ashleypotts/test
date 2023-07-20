@@ -1,3 +1,5 @@
+// Returns a form with all necessary inputs for an DbStaging activity
+
 import Text from '../textbox';
 import Check from '../checkbox';
 import Radio from '../radio';
@@ -8,7 +10,7 @@ function DbStaging(){
     return(
         <tr>
             <td colSpan={2}>
-                <form id="DbStagingForm">
+                <form id="DbStagingForm" style={{marginLeft:20}}>
                     <Text title="sql" activity = "DbStagingForm"/>
                     <Check title="failWhenNull" activity = "DbStagingForm"/>
                     <Text title="id" activity = "DbStagingForm"/>

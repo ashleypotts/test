@@ -1,3 +1,5 @@
+// Creates checkboxes for each activity type and maintains their state
+
 import React, {useState} from 'react';
 import ApiPost from './activityForms/ApiPost';
 import BigPandaAlert from './activityForms/BigPandaAlert';
@@ -37,6 +39,7 @@ const activities = [
   {title: "WriteToStagingDb"}
 ];
 
+// Creates a checkbox
 function Checkbox({title, checked, onChange}) {
   return (
     <tr>
@@ -51,8 +54,10 @@ function Checkbox({title, checked, onChange}) {
 }
 
 function MakeCheckboxes() {
+  // State of checkboxes
   const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
 
+  // Handles state changes
   const handleChange = (event, activity) => {
     const isChecked = event.target.checked;
     if (isChecked) {
@@ -62,6 +67,7 @@ function MakeCheckboxes() {
     }
   };
 
+  // Creates and returns a checkbox for each activity
   return (
   <div>
     <table>

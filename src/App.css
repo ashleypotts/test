@@ -1,6 +1,6 @@
 .App {
   text-align: left;
-  background-color: #8223D2;
+  background-color: #ffffff;
 }
 
 .App-logo {
@@ -16,14 +16,14 @@
 }
 
 .App-header {
-  background-color: #8223D2;
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: left;
   align-items: left;
   justify-content: left;
   font-size: calc(3px + 2vmin);
-  color: rgb(255, 255, 255);
+  color: #8223D2;
   padding-left: 25px;
   padding-bottom: 25px;
   font-family: Arial, Helvetica, sans-serif;

@@ -1,3 +1,5 @@
+// Returns a form with all necessary inputs for an ApiPost activity
+
 import Text from '../textbox';
 import Check from '../checkbox';
 import Num from '../number';
@@ -6,7 +8,7 @@ function ApiPost(){
     return(
         <tr>
             <td colSpan={2}>
-                <form id="ApiPostForm">
+                <form id="ApiPostForm" style={{marginLeft:20}}>
                     <Check title="enabled" activity = "ApiPost"/>
                     <Text title="connectionId" activity = "ApiPost"/>
                     <Text title="endpoint" activity = "ApiPost"/>
