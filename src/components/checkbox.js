@@ -24,11 +24,11 @@ function Check(props){
   // Formats and saves parameters
   var formattedTitle = _.startCase(props.title)
   if(props.title===undefined){var title=""}
-  else{var title=props.title}
+  else{var title = props.title}
   if(props.activity===undefined){var activity=""}
-  else{var activity=props.activity}
+  else{var activity = "_" + props.activity}
   if(props.extra===undefined){var extra=""}
-  else{var extra=props.extra}
+  else{var extra = "_" + props.extra}
 
   // Returns checkbox created with a label
   return(

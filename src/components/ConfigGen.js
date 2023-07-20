@@ -99,7 +99,7 @@ export function updateConfigInfo(newData){
 // Removes all inputs corresponding to an unchecked activity
 export function deleteActivity(activityTitle){
     {for (var key in configInfo) {
-        if(key.endsWith(activityTitle))
+        if(key.endsWith("_"+activityTitle))
         {
             delete configInfo[key];
         }
