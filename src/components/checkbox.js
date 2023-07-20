@@ -1,6 +1,22 @@
+import {useState, useEffect} from 'react';
+import {updateConfigInfo} from './ConfigGen';
 var _ = require('lodash');
 
 function Check(props){
+
+  const [formValue, setFormValue] = useState({});
+  const handleInput = (event) => {
+    let inputValue=false;
+    if(event.target.value==="on"){
+      inputValue=true;
+    }
+    setFormValue({[event.target.name]: inputValue});
+  };
+
+  useEffect(() => {
+    updateConfigInfo(formValue);
+  }, [formValue]);
+
   var formattedTitle = _.startCase(props.title)
   if(props.title===undefined){var title=""}
   else{var title=props.title}
@@ -8,16 +24,16 @@ function Check(props){
   else{var activity=props.activity}
   if(props.extra===undefined){var extra=""}
   else{var extra=props.extra}
-    return(
-      <tr>
-        <td>
-          <label htmlFor={title + activity + extra}>{formattedTitle}:</label>
-        </td>
-        <td>
-          <input type="checkbox" id={title + activity + extra} name={title + activity + extra}/><br></br>
-        </td>
-      </tr>
-    )
+  return(
+    <tr>
+      <td>
+        <label htmlFor={title + activity + extra}>{formattedTitle}:</label>
+      </td>
+      <td>
+        <input type="checkbox" id={title + activity + extra} name={title + activity + extra}  onChange={(e) => handleInput(e)}/><br></br>
+      </td>
+    </tr>
+  )
 }
 
 export default Check;

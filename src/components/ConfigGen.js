@@ -92,7 +92,7 @@ var configjson = {
 export function updateConfigInfo(newData){
     {for (var data in newData) {
         configInfo[data] = newData[data]
-      } }  
+      } }
 }
 
 export function GenerateConfig() {
