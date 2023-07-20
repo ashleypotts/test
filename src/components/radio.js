@@ -27,18 +27,18 @@ function Radio(props){
   if(props.extra===undefined){var extra=""}
   else{var extra=props.extra}
   
-  // Returns radio buttons created with labels
+  // Returns radio buttons created with label
   return(
     <tr>
       <td>
-        <label htmlFor={title + activity + extra}>{formattedTitle}:</label>
+        <label htmlFor={title + extra + activity}>{formattedTitle}:</label>
       </td>
       <td>
         {props.options.map(function(option) {
           return (
             <div>
-            <input type="radio" id={option + activity + extra} name={title + activity + extra} value={option + activity + extra}  onChange={(e) => handleInput(e)}/>
-            <label htmlFor={option + activity + extra}>{option}</label>
+            <input type="radio" id={option + extra + activity} name={title + extra + activity} value={option + extra + activity}  onChange={(e) => handleInput(e)}/>
+            <label htmlFor={option + extra + activity}>{option}</label>
             </div>
           )
         })}

@@ -96,6 +96,16 @@ export function updateConfigInfo(newData){
       } }
 }
 
+// Removes all inputs corresponding to an unchecked activity
+export function deleteActivity(activityTitle){
+    {for (var key in configInfo) {
+        if(key.endsWith(activityTitle))
+        {
+            delete configInfo[key];
+        }
+      } }
+}
+
 // Creates a textarea containing contents of configInfo
 export function GenerateConfig() {
     {for (var item in configInfo) {

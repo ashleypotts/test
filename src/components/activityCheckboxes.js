@@ -1,6 +1,7 @@
 // Creates checkboxes for each activity type and maintains their state
 
 import React, {useState} from 'react';
+import { deleteActivity } from './ConfigGen';
 import ApiPost from './activityForms/ApiPost';
 import BigPandaAlert from './activityForms/BigPandaAlert';
 import DatabaseLookup from './activityForms/DatabaseLookup';
@@ -64,6 +65,7 @@ function MakeCheckboxes() {
       setSelectedCheckboxes(prevCheckboxes => [...prevCheckboxes, activity.title]);
     } else {
       setSelectedCheckboxes(prevCheckboxes => prevCheckboxes.filter(item => item !== activity.title));
+      deleteActivity(activity.title);
     }
   };
 

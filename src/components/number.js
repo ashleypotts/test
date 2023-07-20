@@ -31,10 +31,10 @@ function Num(props){
   return(
     <tr>
       <td>
-        <label htmlFor={title + activity + extra}>{formattedTitle}:</label>
+        <label htmlFor={title + extra + activity}>{formattedTitle}:</label>
       </td>
       <td>
-        <input type="number" id={title + activity + extra} name={title + activity + extra}  onChange={(e) => handleInput(e)}/>
+        <input type="number" id={title + extra + activity} name={title + extra + activity}  onChange={(e) => handleInput(e)}/>
       </td>
     </tr>
   )
