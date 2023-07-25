@@ -9,9 +9,9 @@ function Check(props){
   // Handles state of checkbox
   const [formValue, setFormValue] = useState({});
   const handleInput = (event) => {
-    let inputValue=false;
+    let inputValue="false";
     if(event.target.value==="on"){
-      inputValue=true;
+      inputValue="true";
     }
     setFormValue({[event.target.name]: inputValue});
   };
@@ -24,11 +24,11 @@ function Check(props){
   // Formats and saves parameters
   var formattedTitle = _.startCase(props.title)
   if(props.title===undefined){var title=""}
-  else{title = "_" + props.title}
+  else{title = props.title}
   if(props.activity===undefined){var activity=""}
-  else{activity = "_" + props.activity}
+  else{activity = props.activity + "_"}
   if(props.extra===undefined){var extra=""}
-  else{extra = props.extra}
+  else{extra = props.extra + "_"}
 
   // Returns checkbox created with a label
   return(
