@@ -91,26 +91,45 @@ var configjson = {
 
 // Called by inputs to update configInfo
 export function updateConfigInfo(newData){
-    {for (var data in newData) {
-        configInfo[data] = newData[data]
-      } }
+    for (var data in newData) {
+        var temp = newData[data]
+        temp = temp.trim()
+        temp = temp.replace(/"|'/g, '')
+        if(temp.includes(",")){
+            temp = temp.split(/[ ,]+/)
+        }
+        var tempData = data
+        tempData = tempData.split("_")
+        let currentObject = configInfo
+        for (let i = 0; i < tempData.length; i++) {
+            const key = tempData[i];
+            if (typeof currentObject[key] === 'undefined') {
+                currentObject[key] = {};
+            }
+            if (i === tempData.length - 1) {
+                currentObject[key] = temp;
+            } else {
+                currentObject = currentObject[key];
+            }
+        }
+    }
 }
 
 // Removes all inputs corresponding to an unchecked activity
 export function deleteActivity(activityTitle){
-    {for (var key in configInfo) {
-        if(key.endsWith("_"+activityTitle))
+    for (var key in configInfo) {
+        if(key===activityTitle)
         {
             delete configInfo[key];
         }
-      } }
+    }
 }
 
 // Creates a textarea containing contents of configInfo
 export function GenerateConfig() {
-    {for (var item in configInfo) {
+    for (var item in configInfo) {
         configjson[item] = configInfo[item]
-      } }  
+    }
     let newconfig = JSON.stringify(configjson);
     return (
       <textarea style={{width:"500px",

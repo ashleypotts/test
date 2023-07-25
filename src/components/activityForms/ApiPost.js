@@ -9,6 +9,9 @@ function ApiPost(){
         <tr>
             <td colSpan={2}>
                 <form id="ApiPostForm" style={{marginLeft:20}}>
+                    <tr>
+                        
+                    </tr>
                     <Check title="enabled" activity = "ApiPost"/>
                     <Text title="connectionId" activity = "ApiPost"/>
                     <Text title="endpoint" activity = "ApiPost"/>

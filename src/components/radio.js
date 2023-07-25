@@ -21,24 +21,24 @@ function Radio(props){
   // Formats and saves parameters
   var formattedTitle = _.startCase(props.title)
   if(props.title===undefined){var title=""}
-  else{var title = props.title}
+  else{title = "_" + props.title}
   if(props.activity===undefined){var activity=""}
-  else{var activity = "_" + props.activity}
+  else{activity = "_" + props.activity}
   if(props.extra===undefined){var extra=""}
-  else{var extra = "_" + props.extra}
+  else{extra = props.extra}
   
   // Returns radio buttons created with label
   return(
     <tr>
       <td>
-        <label htmlFor={title + extra + activity}>{formattedTitle}:</label>
+        <label htmlFor={extra + activity + title}>{formattedTitle}:</label>
       </td>
       <td>
         {props.options.map(function(option) {
           return (
             <div>
-            <input type="radio" id={option + extra + activity} name={title + extra + activity} value={option + extra + activity}  onChange={(e) => handleInput(e)}/>
-            <label htmlFor={option + extra + activity}>{option}</label>
+            <input type="radio" id={extra + activity + option} name={extra + activity + title} value={extra + activity + option}  onChange={(e) => handleInput(e)}/>
+            <label htmlFor={extra + activity + option}>{option}</label>
             </div>
           )
         })}

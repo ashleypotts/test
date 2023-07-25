@@ -24,20 +24,20 @@ function Check(props){
   // Formats and saves parameters
   var formattedTitle = _.startCase(props.title)
   if(props.title===undefined){var title=""}
-  else{var title = props.title}
+  else{title = "_" + props.title}
   if(props.activity===undefined){var activity=""}
-  else{var activity = "_" + props.activity}
+  else{activity = "_" + props.activity}
   if(props.extra===undefined){var extra=""}
-  else{var extra = "_" + props.extra}
+  else{extra = props.extra}
 
   // Returns checkbox created with a label
   return(
     <tr>
       <td>
-        <label htmlFor={title + extra + activity}>{formattedTitle}:</label>
+        <label htmlFor={extra + activity + title}>{formattedTitle}:</label>
       </td>
       <td>
-        <input type="checkbox" id={title + extra + activity} name={title + extra + activity}  onChange={(e) => handleInput(e)}/><br></br>
+        <input type="checkbox" id={extra + activity + title} name={extra + activity + title}  onChange={(e) => handleInput(e)}/><br></br>
       </td>
     </tr>
   )

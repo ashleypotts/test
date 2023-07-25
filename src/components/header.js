@@ -28,7 +28,7 @@ function GenerateHeader() {
                     <tbody>
                         <tr>
                             <Check title="enabled"/>
-                            <Text title="type" extra="Schedule"/>
+                            <Text title="type" extra="schedule"/>
                         </tr>
                         <tr >Window
                             <table style={{marginLeft:25}}>
