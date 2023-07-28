@@ -20,68 +20,68 @@ function WriteFile(){
                     <Check title="compressOutput" activity = "WriteFile"/>
                     {/* encryption */}
                         <Check title="enabled" activity = "WriteFile" extra="encryption"/>
-                        <Text title="keyData" activity = "WriteFile"/>
-                        <Text title="passphrase" activity = "WriteFile"/>
+                        <Text title="keyData" activity = "WriteFile" extra="encryption"/>
+                        <Text title="passphrase" activity = "WriteFile" extra="encryption"/>
                     {/* voltageDecryption */}
                         <Check title="enabled" activity = "WriteFile" extra="voltageDecryption"/>
-                        <Text title="connectionId" activity = "WriteFile"/>
+                        <Text title="connectionId" activity = "WriteFile" extra="voltageDecryption"/>
                     {/* headers */}
                         <Radio title="format" options={format} activity = "WriteFile" extra="headers"/>
                         <Text title="sql" activity = "WriteFile" extra="headers"/>
                         {/* config */}
-                            <Text title="sep" activity = "WriteFile" extra="headers"/>
-                            <Text title="columns" activity = "WriteFile" extra="headers"/>
-                            <Check title="header" activity = "WriteFile" extra="headers"/>
-                            <Check title="index" activity = "WriteFile" extra="headers"/>
-                            <Text title="indexLabel" activity = "WriteFile" extra="headers"/>
-                            <Text title="lineTerminator" activity = "WriteFile" extra="headers"/>
-                            <Text title="chunkSize" activity = "WriteFile" extra="headers"/>
-                            <Text title="dateFormat" activity = "WriteFile" extra="headers"/>
-                            <Text title="rowDelimiter" activity = "WriteFile" extra="headers"/>
+                            <Text title="sep" activity = "WriteFile" extra="headers_config"/>
+                            <Text title="columns" activity = "WriteFile" extra="headers_config"/>
+                            <Check title="header" activity = "WriteFile" extra="headers_config"/>
+                            <Check title="index" activity = "WriteFile" extra="headers_config"/>
+                            <Text title="indexLabel" activity = "WriteFile" extra="headers_config"/>
+                            <Text title="lineTerminator" activity = "WriteFile" extra="headers_config"/>
+                            <Text title="chunkSize" activity = "WriteFile" extra="headers_config"/>
+                            <Text title="dateFormat" activity = "WriteFile" extra="headers_config"/>
+                            <Text title="rowDelimiter" activity = "WriteFile" extra="headers_config"/>
                             {/* columns */}
-                                <Text title="name" activity = "WriteFile" extra="headers"/>
-                                <Check title="required" activity = "WriteFile" extra="headers"/>
-                                <Num title="length" activity = "WriteFile" extra="headers"/>
-                                <Text title="alignment" activity = "WriteFile" extra="headers"/>
-                                <Text title="paddingCharacter" activity = "WriteFile" extra="headers"/>
+                                <Text title="name" activity = "WriteFile" extra="headers_config_columns_items"/>
+                                <Check title="required" activity = "WriteFile" extra="headers_config_columns_items"/>
+                                <Num title="length" activity = "WriteFile" extra="headers_config_columns_items"/>
+                                <Text title="alignment" activity = "WriteFile" extra="headers_config_columns_items"/>
+                                <Text title="paddingCharacter" activity = "WriteFile" extra="headers_config_columns_items"/>
                     {/* body */}
                         <Radio title="format" options={format} activity = "WriteFile" extra="body"/>
                         <Text title="sql" activity = "WriteFile" extra="body"/>
                         {/* config */}
-                            <Text title="sep" activity = "WriteFile" extra="body"/>
-                            <Text title="columns" activity = "WriteFile" extra="body"/>
-                            <Check title="header" activity = "WriteFile" extra="body"/>
-                            <Check title="index" activity = "WriteFile" extra="body"/>
-                            <Text title="indexLabel" activity = "WriteFile" extra="body"/>
-                            <Text title="lineTerminator" activity = "WriteFile" extra="body"/>
-                            <Text title="chunkSize" activity = "WriteFile" extra="body"/>
-                            <Text title="dateFormat" activity = "WriteFile" extra="body"/>
-                            <Text title="rowDelimiter" activity = "WriteFile" extra="body"/>
+                            <Text title="sep" activity = "WriteFile" extra="body_config"/>
+                            <Text title="columns" activity = "WriteFile" extra="body_config"/>
+                            <Check title="header" activity = "WriteFile" extra="body_config"/>
+                            <Check title="index" activity = "WriteFile" extra="body_config"/>
+                            <Text title="indexLabel" activity = "WriteFile" extra="body_config"/>
+                            <Text title="lineTerminator" activity = "WriteFile" extra="body_config"/>
+                            <Text title="chunkSize" activity = "WriteFile" extra="body_config"/>
+                            <Text title="dateFormat" activity = "WriteFile" extra="body_config"/>
+                            <Text title="rowDelimiter" activity = "WriteFile" extra="body_config"/>
                             {/* columns */}
-                                <Text title="name" activity = "WriteFile" extra="body"/>
-                                <Check title="required" activity = "WriteFile" extra="body"/>
-                                <Num title="length" activity = "WriteFile" extra="body"/>
-                                <Text title="alignment" activity = "WriteFile" extra="body"/>
-                                <Text title="paddingCharacter" activity = "WriteFile" extra="body"/>
+                                <Text title="name" activity = "WriteFile" extra="body_config_columns_items"/>
+                                <Check title="required" activity = "WriteFile" extra="body_config_columns_items"/>
+                                <Num title="length" activity = "WriteFile" extra="body_config_columns_items"/>
+                                <Text title="alignment" activity = "WriteFile" extra="body_config_columns_items"/>
+                                <Text title="paddingCharacter" activity = "WriteFile" extra="body_config_columns_items"/>
                     {/* trailers */}
                         <Radio title="format" options={format} activity = "WriteFile" extra="trailers"/>
                         <Text title="sql" activity = "WriteFile" extra="trailers"/>
                         {/* config */}
-                            <Text title="sep" activity = "WriteFile" extra="trailers"/>
-                            <Text title="columns" activity = "WriteFile" extra="trailers"/>
-                            <Check title="header" activity = "WriteFile" extra="trailers"/>
-                            <Check title="index" activity = "WriteFile" extra="trailers"/>
-                            <Text title="indexLabel" activity = "WriteFile" extra="trailers"/>
-                            <Text title="lineTerminator" activity = "WriteFile" extra="trailers"/>
-                            <Text title="chunkSize" activity = "WriteFile" extra="trailers"/>
-                            <Text title="dateFormat" activity = "WriteFile" extra="trailers"/>
-                            <Text title="rowDelimiter" activity = "WriteFile" extra="trailers"/>
+                            <Text title="sep" activity = "WriteFile" extra="trailers_config"/>
+                            <Text title="columns" activity = "WriteFile" extra="trailers_config"/>
+                            <Check title="header" activity = "WriteFile" extra="trailers_config"/>
+                            <Check title="index" activity = "WriteFile" extra="trailers_config"/>
+                            <Text title="indexLabel" activity = "WriteFile" extra="trailers_config"/>
+                            <Text title="lineTerminator" activity = "WriteFile" extra="trailers_config"/>
+                            <Text title="chunkSize" activity = "WriteFile" extra="trailers_config"/>
+                            <Text title="dateFormat" activity = "WriteFile" extra="trailers_config"/>
+                            <Text title="rowDelimiter" activity = "WriteFile" extra="trailers_config"/>
                             {/* columns */}
-                                <Text title="name" activity = "WriteFile" extra="trailers"/>
-                                <Check title="required" activity = "WriteFile" extra="trailers"/>
-                                <Num title="length" activity = "WriteFile" extra="trailers"/>
-                                <Text title="alignment" activity = "WriteFile" extra="trailers"/>
-                                <Text title="paddingCharacter" activity = "WriteFile" extra="trailers"/>
+                                <Text title="name" activity = "WriteFile" extra="trailers_config_columns_items"/>
+                                <Check title="required" activity = "WriteFile" extra="trailers_config_columns_items"/>
+                                <Num title="length" activity = "WriteFile" extra="trailers_config_columns_items"/>
+                                <Text title="alignment" activity = "WriteFile" extra="trailers_config_columns_items"/>
+                                <Text title="paddingCharacter" activity = "WriteFile" extra="trailers_config_columns_items"/>
                 </form>
             </td>
         </tr>

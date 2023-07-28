@@ -11,13 +11,13 @@ function DatabaseLookup(){
                     <Text title="sql" activity="DatabaseLookup"/>
                     <Text title="parameters" activity = "DatabaseLookup"/>
                     <Check title="failWhenNull" activity = "DatabaseLookup"/>
-                    <Text title="id" activity = "DatabaseLookup"/>
-                    <Text title="connectionString" activity = "DatabaseLookup"/>
-                    <Text title="url" activity = "DatabaseLookup"/>
-                    <Text title="driverJarPath" activity = "DatabaseLookup"/>
-                    <Text title="username" activity = "DatabaseLookup"/>
-                    <Text title="password" activity = "DatabaseLookup"/>
-                    <Text title="driverParams" activity = "DatabaseLookup"/>
+                    <Text title="id" activity = "DatabaseLookup" extra = "connectionProperties"/>
+                    <Text title="connectionString" activity = "DatabaseLookup" extra = "connectionProperties"/>
+                    <Text title="url" activity = "DatabaseLookup" extra = "connectionProperties"/>
+                    <Text title="driverJarPath" activity = "DatabaseLookup" extra = "connectionProperties"/>
+                    <Text title="username" activity = "DatabaseLookup" extra = "connectionProperties"/>
+                    <Text title="password" activity = "DatabaseLookup" extra = "connectionProperties"/>
+                    <Text title="driverParams" activity = "DatabaseLookup" extra = "connectionProperties"/>
                 </form>
             </td>
         </tr>

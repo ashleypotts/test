@@ -16,8 +16,8 @@ function WriteToStagingDb(){
                     <Radio title="ifTableExists" options={ifTableExists} activity = "WriteToStagingDb"/>
                     <Check title="insertOnlyMappedColumns" activity = "WriteToStagingDb"/>
                     {/* voltageDecryption */}
-                        <Check title="enabled" activity = "WriteToStagingDb"/>
-                        <Text title="connectionId" activity = "WriteToStagingDb"/>
+                        <Check title="enabled" activity = "WriteToStagingDb" extra = "voltageDecryption"/>
+                        <Text title="connectionId" activity = "WriteToStagingDb" extra = "voltageDecryption"/>
                 </form>
             </td>
         </tr>

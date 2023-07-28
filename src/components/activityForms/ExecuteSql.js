@@ -7,7 +7,7 @@ function ExecuteSql(){
         <tr>
             <td colSpan={2}>
                 <form id="ExecuteSqlForm" style={{marginLeft:20}}>
-                    <Text title="connectionString" activity = "ExecuteSql"/>
+                    <Text title="connectionString" activity = "ExecuteSql" extra = "connection"/>
                     <Text title="sql" activity = "ExecuteSql"/>
                     <Text title="parameters" activity = "ExecuteSql"/>
                 </form>

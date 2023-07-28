@@ -31,10 +31,10 @@ function Text(props){
   return(
     <tr>
       <td>
-        <label htmlFor={extra + activity + title}>{formattedTitle}:</label>
+        <label htmlFor={activity + extra + title}>{formattedTitle}:</label>
       </td>
       <td>
-        <input type="text" id={extra + activity + title} name={extra + activity + title}  onChange={(e) => handleInput(e)}/>
+        <input type="text" id={activity + extra + title} name={activity + extra + title}  onChange={(e) => handleInput(e)}/>
       </td>
     </tr>
   )

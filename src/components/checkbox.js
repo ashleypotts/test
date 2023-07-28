@@ -34,10 +34,10 @@ function Check(props){
   return(
     <tr>
       <td>
-        <label htmlFor={extra + activity + title}>{formattedTitle}:</label>
+        <label htmlFor={activity + extra + title}>{formattedTitle}:</label>
       </td>
       <td>
-        <input type="checkbox" id={extra + activity + title} name={extra + activity + title}  onChange={(e) => handleInput(e)}/><br></br>
+        <input type="checkbox" id={activity + extra + title} name={activity + extra + title}  onChange={(e) => handleInput(e)}/><br></br>
       </td>
     </tr>
   )

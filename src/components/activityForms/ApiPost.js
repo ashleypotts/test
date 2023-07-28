@@ -9,19 +9,16 @@ function ApiPost(){
         <tr>
             <td colSpan={2}>
                 <form id="ApiPostForm" style={{marginLeft:20}}>
-                    <tr>
-                        
-                    </tr>
-                    <Check title="enabled" activity = "ApiPost"/>
-                    <Text title="connectionId" activity = "ApiPost"/>
+                    <Check title="enabled" activity = "ApiPost" extra = "voltageDecryption"/>
+                    <Text title="connectionId" activity = "ApiPost" extra = "voltageDecryption"/>
                     <Text title="endpoint" activity = "ApiPost"/>
                     <Text title="path" activity = "ApiPost"/>
                     <Text title="headers" activity = "ApiPost"/>
                     <Text title="payload" activity = "ApiPost"/>
                     <Text title="blobpath" activity = "ApiPost"/>
-                    <Num title="statusCode" activity = "ApiPost"/>
-                    <Text title="message" activity = "ApiPost"/>
-                    <Check title="raiseException" activity = "ApiPost"/>
+                    <Num title="statusCode" activity = "ApiPost" extra = "knownResponses"/>
+                    <Text title="message" activity = "ApiPost" extra = "knownResponses"/>
+                    <Check title="raiseException" activity = "ApiPost" extra = "knownResponses"/>
                 </form>
             </td>
         </tr>

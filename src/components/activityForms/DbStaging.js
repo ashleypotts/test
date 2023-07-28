@@ -11,23 +11,23 @@ function DbStaging(){
         <tr>
             <td colSpan={2}>
                 <form id="DbStagingForm" style={{marginLeft:20}}>
-                    <Text title="sql" activity = "DbStagingForm"/>
-                    <Check title="failWhenNull" activity = "DbStagingForm"/>
-                    <Text title="id" activity = "DbStagingForm"/>
-                    <Text title="type" activity = "DbStagingForm"/>
-                    <Text title="subType" activity = "DbStagingForm"/>
-                    <Text title="connectionString" activity = "DbStagingForm"/>
-                    <Text title="class" activity = "DbStagingForm"/>
-                    <Text title="url" activity = "DbStagingForm"/>
-                    <Text title="driverJarPath" activity = "DbStagingForm"/>
-                    <Text title="username" activity = "DbStagingForm"/>
-                    <Text title="password" activity = "DbStagingForm"/>
-                    <Text title="driverParams" activity = "DbStagingForm"/>
-                    <Text title="table" activity = "DbStagingForm"/>
-                    <Text title="schema" activity = "DbStagingForm"/>
-                    <Radio title="ifTableExists" options={ifTableExists} activity = "DbStagingForm"/>
-                    <Check title="insertOnlyMappedColumns" activity = "DbStagingForm"/>
-                    <Text title="parameters" activity = "DbStagingForm"/>
+                    <Text title="sql" activity = "DbStaging" extra = "sourceProperties"/>
+                    <Check title="failWhenNull" activity = "DbStaging" extra = "sourceProperties"/>
+                    <Text title="id" activity = "DbStaging" extra = "sourceProperties_connection"/>
+                    <Text title="type" activity = "DbStaging" extra = "sourceProperties_connection"/>
+                    <Text title="subType" activity = "DbStaging" extra = "sourceProperties_connection"/>
+                    <Text title="connectionString" activity = "DbStaging" extra = "sourceProperties_connection_config"/>
+                    <Text title="class" activity = "DbStaging" extra = "sourceProperties_connection_config"/>
+                    <Text title="url" activity = "DbStaging" extra = "sourceProperties_connection_config"/>
+                    <Text title="driverJarPath" activity = "DbStaging" extra = "sourceProperties_connection_config"/>
+                    <Text title="username" activity = "DbStaging" extra = "sourceProperties_connection_config"/>
+                    <Text title="password" activity = "DbStaging" extra = "sourceProperties_connection_config"/>
+                    <Text title="driverParams" activity = "DbStaging" extra = "sourceProperties_connection_config"/>
+                    <Text title="table" activity = "DbStaging" extra = "destinationProperties"/>
+                    <Text title="schema" activity = "DbStaging" extra = "destinationProperties"/>
+                    <Radio title="ifTableExists" options={ifTableExists} activity = "DbStaging" extra = "destinationProperties"/>
+                    <Check title="insertOnlyMappedColumns" activity = "DbStaging" extra = "destinationProperties"/>
+                    <Text title="parameters" activity = "DbStaging" extra = "destinationProperties"/>
                 </form>
             </td>
         </tr>
