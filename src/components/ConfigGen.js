@@ -1,5 +1,26 @@
 // Will contain information from any updated input
-var configInfo={};
+var configInfo={
+    "type": "",
+    "subType": "",
+    "client": "",
+    "process": "", 
+    "description": "",
+    "eventFilters": [
+        ""
+    ],               
+    "schedule": {
+        "enabled": false,
+        "type": "",
+        "window": {
+            "startTime": "",
+            "endTime": "",
+            "days": ["Mon"]
+        }
+    },
+    "config":{
+        "actions":{}
+    }
+};
 
 var configjson = {
     "type": "",
@@ -101,6 +122,10 @@ export function updateConfigInfo(newData){
         var tempData = data
         tempData = tempData.split("_")
         let currentObject = configInfo
+        let firstChar = data.charCodeAt(0)
+        if(firstChar >= 65 && firstChar <= 90){
+            currentObject = currentObject["config"]["actions"]
+        }
         for (let i = 0; i < tempData.length; i++) {
             const key = tempData[i];
             if (typeof currentObject[key] === 'undefined') {
@@ -117,10 +142,10 @@ export function updateConfigInfo(newData){
 
 // Removes all inputs corresponding to an unchecked activity
 export function deleteActivity(activityTitle){
-    for (var key in configInfo) {
+    for (var key in configInfo["config"]["actions"]) {
         if(key===activityTitle)
         {
-            delete configInfo[key];
+            delete configInfo["config"]["actions"][key];
         }
     }
 }
@@ -130,9 +155,9 @@ export function GenerateConfig() {
     for (var item in configInfo) {
         configjson[item] = configInfo[item]
     }
-    let newconfig = JSON.stringify(configjson);
+    let newconfig = JSON.stringify(configjson, null, "\t");
     return (
-      <textarea style={{width:"500px",
+      <textarea style={{width:"1000px",
                         height: "200px"}}>
         {newconfig}
       </textarea> 
