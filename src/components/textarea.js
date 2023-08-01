@@ -1,12 +1,12 @@
-// Function called to create a textbox
+// Function called to create a textarea
 
 import {useState, useEffect} from 'react';
 import {updateConfigInfo} from './ConfigGen';
 var _ = require('lodash');
 
-function Text(props){
+function TextArea(props){
 
-  // Handles state of textbox
+  // Handles state of textarea
   const [formValue, setFormValue] = useState({});
   const handleInput = (event) => {
     const inputValue = event.target.value;
@@ -17,7 +17,7 @@ function Text(props){
   useEffect(() => {
     updateConfigInfo(formValue);
   }, [formValue]);
-
+  
   // Formats and saves parameters
   var formattedTitle = _.startCase(props.title)
   if(props.title===undefined){var title=""}
@@ -26,18 +26,17 @@ function Text(props){
   else{activity = props.activity + "_"}
   if(props.extra===undefined){var extra=""}
   else{extra = props.extra + "_"}
-  
-  // Returns textbox created with a label
+
+  // Returns textarea created with a label
   return(
     <tr>
       <td>
         <label htmlFor={activity + extra + title}>{formattedTitle}:</label>
       </td>
       <td>
-        <input type="text" id={activity + extra + title} name={activity + extra + title}  onChange={(e) => handleInput(e)}/>
+        <textarea id={activity + extra + title} name={activity + extra + title}  onChange={(e) => handleInput(e)}>{props.content}</textarea>
       </td>
     </tr>
   )
 }
-
-export default Text;
+export default TextArea;

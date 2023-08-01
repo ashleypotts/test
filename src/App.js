@@ -2,11 +2,13 @@ import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 
-import GenerateConfig from './components/ConfigGen';
+import MakeCheckboxes from './components/activityCheckboxes';
+import {GenerateConfig} from './components/ConfigGen';
 import GenerateHeader from './components/header';
-import MakeActivities from './components/newActivity';
+import asurionLogo from './asurion_logo_black.png'
 import { Component } from 'react';
 
+var headerData={};
 
 function App() {
   const [showConfig, setShowConfig] = useState(false);
@@ -15,10 +17,13 @@ function App() {
   };
   return (
     <div className="App">
+      <div className="App-logo">
+      <img src={asurionLogo} height={80} style={{alignSelf:'right'}}/></div>
       <header className="App-header">
         <form>
           <GenerateHeader/>
-          <MakeActivities/>
+          {/* <MakeActivities/> */}
+          <MakeCheckboxes/>
           <button onClick={setShowConfig} disabled={showConfig}>Generate Config</button><br/>
           {showConfig && GenerateConfig()}
         </form>
@@ -26,8 +31,5 @@ function App() {
     </div>
   );
 }
-
-
-
 
 export default App;

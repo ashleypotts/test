@@ -1,3 +1,26 @@
+// Will contain information from any updated input
+var configInfo={
+    "type": "",
+    "subType": "",
+    "client": "",
+    "process": "", 
+    "description": "",
+    "eventFilters": [
+        ""
+    ],               
+    "schedule": {
+        "enabled": false,
+        "type": "",
+        "window": {
+            "startTime": "",
+            "endTime": "",
+            "days": ["Mon"]
+        }
+    },
+    "config":{
+        "actions":{}
+    }
+};
 
 var configjson = {
     "type": "",
@@ -87,15 +110,56 @@ var configjson = {
     }
 }
 
+// Called by inputs to update configInfo
+export function updateConfigInfo(newData){
+    for (var data in newData) {
+        var temp = newData[data]
+        temp = temp.trim()
+        temp = temp.replace(/"|'/g, '')
+        if(temp.includes(",")){
+            temp = temp.split(/[ ,]+/)
+        }
+        var tempData = data
+        tempData = tempData.split("_")
+        let currentObject = configInfo
+        let firstChar = data.charCodeAt(0)
+        if(firstChar >= 65 && firstChar <= 90){
+            currentObject = currentObject["config"]["actions"]
+        }
+        for (let i = 0; i < tempData.length; i++) {
+            const key = tempData[i];
+            if (typeof currentObject[key] === 'undefined') {
+                currentObject[key] = {};
+            }
+            if (i === tempData.length - 1) {
+                currentObject[key] = temp;
+            } else {
+                currentObject = currentObject[key];
+            }
+        }
+    }
+}
 
-function GenerateConfig() {
-    let newconfig = JSON.stringify(configjson);
+// Removes all inputs corresponding to an unchecked activity
+export function deleteActivity(activityTitle){
+    for (var key in configInfo["config"]["actions"]) {
+        if(key===activityTitle)
+        {
+            delete configInfo["config"]["actions"][key];
+        }
+    }
+}
+
+// Creates a textarea containing contents of configInfo
+export function GenerateConfig() {
+    for (var item in configInfo) {
+        configjson[item] = configInfo[item]
+    }
+    let newconfig = JSON.stringify(configjson, null, "\t");
     return (
-      <textarea style={{width:"500px",
+      <textarea style={{width:"1000px",
                         height: "200px"}}>
         {newconfig}
       </textarea> 
     )
   }
-
-export default GenerateConfig;
