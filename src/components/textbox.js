@@ -2,15 +2,27 @@
 
 import {useState, useEffect} from 'react';
 import {updateConfigInfo} from './ConfigGen';
+
+var validator = require('validator');
 var _ = require('lodash');
 
 function Text(props){
 
+  var validateTime = false;
+
+  const [errorMessage, setErrorMessage] = useState('')
   // Handles state of textbox
   const [formValue, setFormValue] = useState({});
   const handleInput = (event) => {
     const inputValue = event.target.value;
     setFormValue({[event.target.name]: inputValue});
+    if(validateTime){
+      if (validator.isTime(event.target.value)) {
+        setErrorMessage('')
+      } else {
+        setErrorMessage('Enter Valid Time!')
+      }
+    }
   };
 
   // Calls updateConfigInfo in ConfigGen file to send new input
@@ -27,6 +39,9 @@ function Text(props){
   if(props.extra===undefined){var extra=""}
   else{extra = props.extra + "_"}
   
+
+  if(formattedTitle.includes("Time")){validateTime = true;}
+
   // Returns textbox created with a label
   return(
     <tr>
@@ -36,6 +51,10 @@ function Text(props){
       <td>
         <input type="text" id={activity + extra + title} name={activity + extra + title}  onChange={(e) => handleInput(e)}/>
       </td>
+        <span style={{
+          fontWeight: 'bold',
+          color: 'red',
+        }}>{errorMessage}</span>
     </tr>
   )
 }

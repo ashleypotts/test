@@ -25,7 +25,7 @@ function App() {
           {/* <MakeActivities/> */}
           <MakeCheckboxes/>
           <button onClick={setShowConfig} disabled={showConfig}>Generate Config</button><br/>
-          {showConfig && GenerateConfig()}
+          {showConfig && <GenerateConfig/>}
         </form>
       </header>
     </div>
