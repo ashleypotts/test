@@ -20,7 +20,7 @@ function Text(props){
       if (validator.isTime(event.target.value)) {
         setErrorMessage('')
       } else {
-        setErrorMessage('Enter Valid Time!')
+        setErrorMessage('Enter a valid time!')
       }
     }
   };
