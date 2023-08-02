@@ -9,6 +9,7 @@ var _ = require('lodash');
 function Text(props){
 
   var validateTime = false;
+  var validateURL = false;
 
   const [errorMessage, setErrorMessage] = useState('')
   // Handles state of textbox
@@ -21,6 +22,13 @@ function Text(props){
         setErrorMessage('')
       } else {
         setErrorMessage('Enter a valid time!')
+      }
+    }
+    if(validateURL){
+      if (validator.isURL(event.target.value)) {
+        setErrorMessage('')
+      } else {
+        setErrorMessage('Enter a valid URL!')
       }
     }
   };
@@ -41,6 +49,7 @@ function Text(props){
   
 
   if(formattedTitle.includes("Time")){validateTime = true;}
+  if(formattedTitle.includes("Url")){validateURL = true;}
 
   // Returns textbox created with a label
   return(
